@@ -81,7 +81,7 @@ MONGO_URI=your_mongo_connection
 JWT_SECRET=supersecret
 Start server:
 
-bash
+```bash
 Copy code
 npm run dev
 🌐 Frontend Setup
@@ -109,7 +109,7 @@ Resume Routes
 Method	Route	Description
 POST	/api/resume/save	Save/update resume
 GET	/api/resume/my	Get current user resume
-
+```
 📊 Screenshots
 <p align="center"> <img src="https://user-images.githubusercontent.com/your-screenshot1.png" width="400" /> <img src="https://user-images.githubusercontent.com/your-screenshot2.png" width="400" /> </p>
 💡 Why This Project?
@@ -154,48 +154,13 @@ GitHub: @tamal006
 
 📫 Contact
 Email: tamalkumarkhan@example.com
-LinkedIn: https://linkedin.com/in/tamalkumarkhan
+LinkedIn: https://www.linkedin.com/in/tamal-kumar-khan/
 
 ⭐ Support
 If you found this project helpful, give it a ⭐ on GitHub!
 
-📜 License
-Distributed under the MIT License. See LICENSE for more information.
 
-yaml
-Copy code
 
----
-
-## 🤩 What This README Includes
-
-✅ Project title, logo & preview  
-✅ About & features  
-✅ Built With table  
-✅ Installation steps (frontend & backend)  
-✅ API docs  
-✅ Screenshots  
-✅ How it works  
-✅ Contributing guide  
-✅ Contact & author info  
-✅ Badges & visuals ready
-
----
-
-## 📌 Next Enhancements (Optional)
-
-If you want, I can also generate:
-
-✨ GitHub badges (build, issues, stars)  
-✨ Auto-generated API docs  
-✨ Live demo button  
-✨ Project screenshots embedded  
-✨ Section for upcoming features
-
-Just ask! 🚀
-::contentReference[oaicite:0]{index=0}
-
-1/2
 
 
 
