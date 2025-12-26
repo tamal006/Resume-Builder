@@ -7,7 +7,7 @@ import userRouter from './routes/userAuth.js';
 import resumeRouter from './routes/resumeData.js';
 import resumeToken from './middleware/resumeToken.js';
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT||3000
 
 app.use(express.json());
 app.use(cors());
