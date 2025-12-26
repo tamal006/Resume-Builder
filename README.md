@@ -153,7 +153,7 @@ Open a Pull Request
 GitHub: @tamal006
 
 📫 Contact
-Email: tamalkumarkhan@example.com
+Email: tamalkumarkhan@gmail.com
 LinkedIn: https://www.linkedin.com/in/tamal-kumar-khan/
 
 ⭐ Support
