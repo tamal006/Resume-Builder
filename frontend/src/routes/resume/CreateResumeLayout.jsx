@@ -40,7 +40,7 @@ useEffect(() => {
           go to dashboard
         </button>
         </div>
-        <Templet1 ref={resumeRef} />
+        <Templet1 id="resume-print" ref={resumeRef} />
       </div>
     </div>
   );
