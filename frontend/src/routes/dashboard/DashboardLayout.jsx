@@ -14,9 +14,7 @@ const DashboardLayout = () => {
         const bcurl=import.meta.env.VITE_API_URL
             const url = bcurl+"/api/resume/gotAllData";
     const response1 = await axios.post(url,{token:token});
-    setResponse(response1.data.data)
-console.log("okl",response)
-      
+    setResponse(response1.data.data)    
 };
     useEffect(()=>{
       if(dashboardMenu=="myResume"){
@@ -24,7 +22,7 @@ console.log("okl",response)
       }
     },[dashboardMenu])
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen ">
       <Sidebar />
       <main className="flex-1 p-6 bg-gray-100">
         {dashboardMenu==="createResume"?<CreateResume />:<DashboardHome resumes={response}/>}

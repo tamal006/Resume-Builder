@@ -57,6 +57,6 @@ const resumeSchema = new mongoose.Schema(
 );
 
 const resumemodel =
-  mongoose.model.userauth || mongoose.model("resume", resumeSchema); //make the model with name food and if it already exists use that
+  mongoose.model.resume || mongoose.model("resume", resumeSchema); //make the model with name food and if it already exists use that
 
 export default resumemodel;

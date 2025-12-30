@@ -1,63 +1,101 @@
-import { useNavigate,useParams } from "react-router-dom";
-import { useState,useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import axios from "axios";
+
 const ResumeEditor = () => {
-  const id= Date.now();
-  const navigate=useNavigate();
-const { resumeData, setResumeData,resId, setresId } = useContext(AuthContext);
-const handleSubmit = async (e) => {
+  const id = "" + Date.now();
+  const navigate = useNavigate();
+  const { resumeData, setResumeData, setresId } = useContext(AuthContext);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
-    const bcurl=import.meta.env.VITE_API_URL
-            const url = bcurl+"/api/resume/create";
-    const info={
+    const base = import.meta.env.VITE_API_URL;
+    const url = base + "/api/resume/create";
+
+    const info = {
       data: resumeData,
-      token: token,
-      resumeId:id,
-    }
-       setresId(id);
-    console.log("User Input:",info);
-     const response = await axios.post(url,info);
-    //pass to Backend for store in db
+      token,
+      resumeId: id,
+    };
+
+    setresId(id);
+    await axios.post(url, info);
     navigate(`/resume/${id}`);
   };
+
   return (
-     <div className="flex items-center justify-center h-screen">
-      <div className="bg-white text-gray-500 max-w-96 mx-4 md:p-6 p-4 text-left text-sm rounded-xl shadow-[0px_0px_10px_0px] shadow-black/10">
-      <h1 className="text-2xl font-bold mb-4">Edit Resume</h1>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center px-4">
 
-      <input
-        placeholder="Full Name"
-        className="border p-2 w-full mb-3"
-        value={resumeData.name}
-        onChange={(e) =>
-          setResumeData({ ...resumeData, name: e.target.value })
-        }
-      />
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white w-full max-w-lg rounded-2xl shadow-xl p-8 space-y-6"
+      >
+        {/* Header */}
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-800">
+            Edit Your Resume
+          </h1>
+          <p className="text-gray-500 mt-1">
+            Fill in your details to build a professional, ATS-friendly resume.
+          </p>
+        </div>
 
-      <input
-        placeholder="Job Title"
-        className="border p-2 w-full mb-3"
-        value={resumeData.title}
-        onChange={(e) =>
-          setResumeData({ ...resumeData, title: e.target.value })
-        }
-      />
+        {/* Name */}
+        <div>
+          <label className="text-sm font-medium text-gray-600">
+            Full Name
+          </label>
+          <input
+            placeholder="John Doe"
+            className="mt-1 w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            value={resumeData.name}
+            onChange={(e) =>
+              setResumeData({ ...resumeData, name: e.target.value })
+            }
+          />
+        </div>
 
-      <textarea
-        placeholder="Summary"
-        className="border p-2 w-full mb-3"
-        value={resumeData.summary}
-        onChange={(e) =>
-          setResumeData({ ...resumeData, summary: e.target.value })
-        }
-      />
+        {/* Title */}
+        <div>
+          <label className="text-sm font-medium text-gray-600">
+            Job Title
+          </label>
+          <input
+            placeholder="Full Stack Developer"
+            className="mt-1 w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            value={resumeData.title}
+            onChange={(e) =>
+              setResumeData({ ...resumeData, title: e.target.value })
+            }
+          />
+        </div>
 
-      <button onClick={handleSubmit} className="bg-blue-600 text-white px-6 py-2 rounded">
-        Save Resume
-      </button>
-    </div>
+        {/* Summary */}
+        <div>
+          <label className="text-sm font-medium text-gray-600">
+            Professional Summary
+          </label>
+          <textarea
+            placeholder="Brief summary about you..."
+            rows="4"
+            className="mt-1 w-full px-4 py-3 border rounded-xl resize-none focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            value={resumeData.summary}
+            onChange={(e) =>
+              setResumeData({ ...resumeData, summary: e.target.value })
+            }
+          />
+        </div>
+
+        {/* Save Button */}
+        <button
+          type="submit"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl shadow-md transition"
+        >
+          Save & Continue
+        </button>
+      </form>
     </div>
   );
 };

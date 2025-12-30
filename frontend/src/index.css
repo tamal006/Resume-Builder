@@ -13,3 +13,15 @@ html {
 button{
   cursor: pointer;
 }
+.resume-preview {
+  transform-origin: top center;
+ 
+}
+
+@media (max-width: 768px) {
+  .resume-preview {
+    transform: scale(0.5);
+    height: calc(1123px * 0.5);
+
+  }
+}

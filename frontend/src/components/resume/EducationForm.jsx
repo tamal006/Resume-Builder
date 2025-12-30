@@ -58,7 +58,7 @@ const EducationForm = () => {
   }, [id, setresId, education.length]);
 
   return (
-    <div className="max-w-4xl mx-auto bg-white p-6 md:p-8 shadow rounded-lg mt-20">
+    <div className="max-w-4xl mx-auto bg-white p-6 md:p-8 shadow rounded-lg mt-20 mb-10">
       <h2 className="text-2xl font-bold mb-6">Education</h2>
 
       {education.map((edu, index) => (
@@ -122,13 +122,13 @@ const EducationForm = () => {
         <div className="flex  gap-8">
           <button
             onClick={() => navigate(-1)}
-            className="mt-6 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+            className="mt-6 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700 transition"
           >
             ← Back
           </button>
           <button
             onClick={nextInfo}
-            className="mt-6 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+            className="mt-6 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700 transition"
           >
             next
           </button>
@@ -136,7 +136,7 @@ const EducationForm = () => {
         <button
           type="submit"
           onClick={handlesubmit}
-          className="mt-6 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+          className="mt-6 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700 transition"
         >
           Save
         </button>

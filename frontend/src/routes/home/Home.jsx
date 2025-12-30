@@ -9,11 +9,11 @@ import Footer from "../../components/home/Footer";
 const Home = () => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen pb-20 ">
+      <div className="flex flex-col  items-center justify-center min-h-screen p-5 bg-gradient-to-b from-[#f7f9ff] via-[#fffbee] to-[#f7f9ff] h-full ">
         <NavBar />
         <Hero />
         <Features />
-        <Testimonial />
+       
         <GetStarted />
         <Footer />
       </div>

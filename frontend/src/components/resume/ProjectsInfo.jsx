@@ -70,7 +70,7 @@ const ProjectsForm = () => {
     if (id) setresId(id);
   }, [id, setresId]);
   return (
-    <div className="max-w-4xl mx-auto bg-white p-6 md:p-8 shadow rounded-lg">
+    <div className="max-w-4xl mx-auto bg-white p-6 md:p-8 shadow rounded-lg mb-10">
       <h2 className="text-2xl font-bold mb-6">Projects</h2>
 
       {projects.map((project, pIndex) => (
@@ -142,13 +142,13 @@ const ProjectsForm = () => {
         <div className="flex  gap-8">
           <button
             onClick={() => navigate(-1)}
-            className="mt-6 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+            className="mt-6 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700 transition"
           >
             ← Back
           </button>
           <button
             onClick={nextInfo}
-            className="mt-6 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+            className="mt-6 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700 transition"
           >
             next
           </button>
@@ -156,7 +156,7 @@ const ProjectsForm = () => {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="mt-6 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+          className="mt-6 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700 transition"
         >
           Save
         </button>

@@ -75,7 +75,7 @@ const ForgotPassword = () => {
           type="submit"
           className="w-full mb-3 bg-indigo-500 py-2.5 rounded-full text-white mt-5"
         >
-          Create Account
+          Reset Password
         </button>
       </form>
       <p className="text-center mt-4">

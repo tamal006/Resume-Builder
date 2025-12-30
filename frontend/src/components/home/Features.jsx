@@ -3,7 +3,7 @@ import React from 'react'
 const Features = () => {
  return (
         <>
-            <div id='features' className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-40">
+            <div id='features' className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
                 <div className="size-[520px] top-0 left-1/2 -translate-x-1/2 rounded-full absolute blur-[300px] -z-10 bg-[#FBFFE1]/70"></div>
                 <div className="flex flex-col items-center justify-center max-w-80">
                     <div className="p-6 aspect-square bg-violet-100 rounded-full">

@@ -147,21 +147,21 @@ const PersonalInfoForm = () => {
         <div className="flex  gap-8">
           <button
             onClick={() => navigate(-1)}
-            className="mt-6 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+            className="mt-6 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700 transition"
           >
             ← Back
           </button>
           <button
             type="button"
             onClick={nextInfo}
-            className="mt-6 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+            className="mt-6 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700 transition"
           >
             next
           </button>
         </div>
         <button
           type="submit"
-          className="mt-6 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+          className="mt-6 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700 transition"
         >
           Save
         </button>

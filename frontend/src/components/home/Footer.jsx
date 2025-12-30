@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="px-6 pt-8 md:px-16 lg:px-36 w-full text-gray-600 mt-30">
             <div className="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500 pb-10">
                 <div className="md:max-w-96">
-                    <img alt="" className="h-11" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/prebuiltuiLogoSquareShape.svg" />
+                    <img alt="" className="h-11" src="logo.svg" />
                     <p className="mt-6 text-sm">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        Build ATS-friendly resumes with our powerful online builder. Choose beautiful templates, customize in real time, and download professional resumes that help you stand out.
                     </p>
                     <div className="flex items-center gap-2 mt-4">
                         <img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/refs/heads/main/assets/appDownload/googlePlayBtnBlack.svg" alt="google play" className="h-10 w-auto border border-white rounded" />
@@ -29,8 +29,8 @@ const Footer = () => {
                     <div>
                         <h2 className="font-semibold mb-5">Get in touch</h2>
                         <div className="text-sm space-y-2">
-                            <p>+1-234-567-890</p>
-                            <p>contact@example.com</p>
+                            <p>+91 7439479174</p>
+                            <p>tamalkumarkhan006@gmail.com</p>
                         </div>
                     </div>
                 </div>

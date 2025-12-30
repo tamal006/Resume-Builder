@@ -53,9 +53,9 @@ const Forgot = () => {
       />
       <button
         onClick={handleForgot}
-        className="bg-green-500 text-white w-full py-2 rounded"
+        className="bg-blue-500 text-white w-full py-2 rounded"
       >
-        Send Reset Link
+        Send OTP
       </button>
     </>
   );
