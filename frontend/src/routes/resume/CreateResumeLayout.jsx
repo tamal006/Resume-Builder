@@ -1,9 +1,11 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 import Templet1 from "../../components/resume/Templet1";
+import { useEffect } from "react";
 
 const CreateResumeLayout = () => {
+  const navigate = useNavigate();
   const resumeRef = useRef();
   const [preview, setPreview] = useState(false);
 
@@ -11,6 +13,9 @@ const CreateResumeLayout = () => {
     contentRef: resumeRef,
     documentTitle: "My_Resume",
   });
+    useEffect(() => {
+  
+  }, []);
   return (
     <div className="h-screen flex flex-col bg-gray-100">
       {/* Top Bar */}
@@ -18,6 +23,14 @@ const CreateResumeLayout = () => {
         <h2 className="text-xl font-semibold text-gray-800">Resume Editor</h2>
 
         <div className="flex gap-2">
+          <button
+            onClick={() => {
+              navigate("/dashboard");
+            }}
+            className=" bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm"
+          >
+            Dashboard
+          </button>
           <button
             onClick={handlePrint}
             className="hidden md:block bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm"
@@ -40,17 +53,13 @@ const CreateResumeLayout = () => {
 
         {/* Resume Preview */}
         <div
-          className={`w-full md:w-1/2 overflow-y-auto bg-gray-50 p-4 ${
+          className={`w-full md:w-1/2 overflow-y-auto bg-gray-50  ${
             preview ? "block" : "hidden md:block"
           }`}
         >
-          <div className="bg-white shadow-lg rounded-lg p-4">
-            <div className="w-full flex justify-center overflow-hidden">
-              <div className="relative w-[794px] md:w-[794px]">
-                <div className="resume-preview">
-                  <Templet1 ref={resumeRef} />
-                </div>
-              </div>
+          <div className="w-full flex justify-center overflow-hidden bg-white shadow-lg rounded-lg  relative w-[794px] md:w-[794px]">
+            <div className="resume-preview">
+              <Templet1 ref={resumeRef} />
             </div>
           </div>
         </div>

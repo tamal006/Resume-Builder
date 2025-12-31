@@ -27,7 +27,7 @@ const PersonalInfoForm = () => {
       const bcurl = import.meta.env.VITE_API_URL;
       const url = bcurl + "/api/resume/personal";
       const info = {
-        personal: formData,
+        data:{personal: formData},
         token: token,
         resumeId: id,
       };

@@ -45,9 +45,9 @@ const ProjectsForm = () => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     const bcurl = import.meta.env.VITE_API_URL;
-    const url = bcurl + "/api/resume/project";
+    const url = bcurl + "/api/resume/personal";
     const info = {
-      projects: projects,
+      data:{projects: projects},
       token: token,
       resumeId: id,
     };

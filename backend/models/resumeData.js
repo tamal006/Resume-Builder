@@ -9,6 +9,10 @@ const resumeSchema = new mongoose.Schema(
       name: String,
       title: String,
       summary: String,
+      template: {
+        type: String,
+        default: "template1",
+      },
     },
     personal: {
       name: String,
@@ -22,7 +26,7 @@ const resumeSchema = new mongoose.Schema(
     skills: [
       {
         category: String,
-        items: [String],
+        items: String,
       },
     ],
 

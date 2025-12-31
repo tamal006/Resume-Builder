@@ -49,9 +49,9 @@ const handlesubmit =async (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
       const bcurl=import.meta.env.VITE_API_URL
-            const url = bcurl+"/api/resume/experience";
+            const url = bcurl+"/api/resume/personal";
         const info={
-          experience: experience,
+          data:{experience: experience},
           token: token,
           resumeId:id,
         }
@@ -163,7 +163,7 @@ const handlesubmit =async (e) => {
           </button>
 
           {/* Remove Experience */}
-          {experience.length > 1 && (
+          {experience.length >= 1 && (
             <button
               onClick={() => removeExperience(expIndex)}
               className="absolute top-3 right-3 bg-red-600 text-white text-xs px-3 py-1 rounded"

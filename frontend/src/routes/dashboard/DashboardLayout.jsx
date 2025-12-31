@@ -7,20 +7,8 @@ import CreateResume from "./../../components/dashboard/createResume";
 import axios from "axios";
 
 const DashboardLayout = () => {
-    const { dashboardMenu, setDashboardMenu } = useContext(AuthContext);
-    const [response,setResponse]=useState([]);
-    const fetchData=async()=>{
-        const token = localStorage.getItem("token");
-        const bcurl=import.meta.env.VITE_API_URL
-            const url = bcurl+"/api/resume/gotAllData";
-    const response1 = await axios.post(url,{token:token});
-    setResponse(response1.data.data)    
-};
-    useEffect(()=>{
-      if(dashboardMenu=="myResume"){
-        fetchData();
-      }
-    },[dashboardMenu])
+    const { dashboardMenu, setDashboardMenu,response,setResponse } = useContext(AuthContext);
+    
   return (
     <div className="flex min-h-screen ">
       <Sidebar />

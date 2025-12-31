@@ -29,9 +29,9 @@ const AchivementForm = () => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     const bcurl = import.meta.env.VITE_API_URL;
-    const url = bcurl + "/api/resume/achievements";
+    const url = bcurl + "/api/resume/personal";
     const info = {
-      achievements: achievements,
+      data:{achievements: achievements},
       token: token,
       resumeId: id,
     };

@@ -52,7 +52,7 @@ const Hero = () => {
             }}
             className="bg-white hover:bg-white/5 border border-violet-400 text-gray-600 text-xs md:text-sm px-5 py-3 rounded-lg transition cursor-pointer"
           >
-            Book a demo
+            Demo resume
           </button>
         </div>
       </section>

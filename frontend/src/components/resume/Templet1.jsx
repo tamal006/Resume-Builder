@@ -5,6 +5,7 @@ import ProjectPreview from "../templet1/ProjectPreview";
 import AchivementPreview from "../templet1/AchivementPreview";
 import { ExperiencePreview } from "../templet1/ExperiencePreview";
 import EducationPreview from "../templet1/EducationPreview";
+import SummaryPreview from "../templet1/SummaryPreview";
 
 const Templet1 = forwardRef((props, ref) => {
   return (
@@ -14,10 +15,11 @@ const Templet1 = forwardRef((props, ref) => {
       style={{
         width: "210mm",
         minHeight: "297mm",
-        padding: "20mm",
+        padding: "10mm",
       }}
     >
       <PersonalInfoPreview />
+      <SummaryPreview/>
       <SkillsPreview />
       <ExperiencePreview />
       <ProjectPreview />

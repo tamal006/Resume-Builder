@@ -4,7 +4,8 @@ import { jwtDecode } from "jwt-decode"; // or import { jwtDecode } from 'jwt-dec
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  
+  const [reload, setReload] = useState(false);
+  const [response, setResponse] = useState([]);
   const [resId, setresId] = useState("");
   const [dashboardMenu, setDashboardMenu] = useState("myResume");
   const [userId, setUserId] = useState("");
@@ -13,51 +14,52 @@ export const AuthProvider = ({ children }) => {
     title: "",
     summary: "",
   });
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    linkedin: "",
-    github: "",
-    summary: "",
-  });
-  const [skills, setSkills] = useState([{ category: "", items: "" }]);
-  const [projects, setProjects] = useState([{ title: "", points: [] }]);
-  const [achievements, setAchievements] = useState([""]);
-  const [education, setEducation] = useState([
-    {
-      institute: "",
-      degree: "",
-      duration: "",
-      cgpa: "",
-    },
-  ]);
-  const [experience, setExperience] = useState([
-    {
-      company: "",
-      role: "",
-      duration: "",
-      points: [""],
-    },
-  ]);
+  const [formData, setFormData] = useState({});
+  const [skills, setSkills] = useState([]);
+  const [projects, setProjects] = useState([]);
+  const [achievements, setAchievements] = useState([]);
+  const [education, setEducation] = useState([]);
+  const [experience, setExperience] = useState([]);
   const fetchData = async () => {
     const token = localStorage.getItem("token");
-     const bcurl=import.meta.env.VITE_API_URL
-            const url = bcurl+"/api/resume/gotData";
+    const bcurl = import.meta.env.VITE_API_URL;
+    const url = bcurl + "/api/resume/gotData";
     const info1 = {
       token: token,
       resumeId: resId,
     };
     const response1 = await axios.post(url, info1);
-    setSkills(response1.data.data.skills);
-    console.log("zzz", response1, resId);
-    setFormData(response1.data.data.personal);
-    console.log("zzz", response1, formData);
-    setExperience(response1.data.data.experience);
-    setProjects(response1.data.data.projects);
-    setAchievements(response1.data.data.achievements);
-    setEducation(response1.data.data.education);
+    const resume = response1.data?.data;
+
+    if (!resume) {
+      setSkills([]);
+      setFormData({});
+      setExperience([]);
+      setProjects([]);
+      setAchievements([]);
+      setEducation([]);
+      return;
+    }
+
+    setSkills(resume.skills || []);
+    setFormData(resume.personal || {});
+    setExperience(resume.experience || []);
+    setProjects(resume.projects || []);
+    setAchievements(resume.achievements || []);
+    setEducation(resume.education || []);
   };
+  const fetchAllData = async () => {
+    const token = localStorage.getItem("token");
+    const bcurl = import.meta.env.VITE_API_URL;
+    const url = bcurl + "/api/resume/gotAllData";
+    const response1 = await axios.post(url, { token: token });
+    setResponse(response1.data.data);
+  };
+  useEffect(() => {
+    if (dashboardMenu == "myResume") {
+      fetchAllData();
+    }
+  }, [dashboardMenu, reload]);
   useEffect(() => {
     if (resId) {
       fetchData();
@@ -83,6 +85,10 @@ export const AuthProvider = ({ children }) => {
     setResumeData,
     resId,
     setresId,
+    response,
+    setResponse,
+    reload,
+    setReload,
   };
   useEffect(() => {
     const token = localStorage.getItem("token");

@@ -29,9 +29,9 @@ const EducationForm = () => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     const url1 = import.meta.env.VITE_API_URL;
-    const url = url1 + "/api/resume/education";
+    const url = url1 + "/api/resume/personal";
     const info = {
-      education: education,
+      data:{education: education},
       token: token,
       resumeId: id,
     };

@@ -19,7 +19,11 @@ const ResumeEditor = () => {
       token,
       resumeId: id,
     };
-
+    setResumeData({
+    name: "",
+    title: "",
+    summary: "",
+  });
     setresId(id);
     await axios.post(url, info);
     navigate(`/resume/${id}`);
