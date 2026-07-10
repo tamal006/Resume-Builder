@@ -8,7 +8,6 @@ const userauthSchema = new mongoose.Schema(
     isVerified: { type: Boolean, default: false },
     verificationCode: { type: String },
     expireTime: { type: Number, default: 0 },
-    cartData: { type: Object, default: {} },
   },
  {minimize:false}
 );
